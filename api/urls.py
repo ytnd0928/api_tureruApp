@@ -14,3 +14,4 @@ urlpatterns = [
     path('myprofile/', views.MyProfileListView.as_view(), name='myprofile'),
     path('',include(router.urls))
 ]
+
