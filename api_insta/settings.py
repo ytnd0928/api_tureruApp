@@ -23,7 +23,7 @@ SECRET_KEY = '93sz7=ro#_8a(_(wk)e2z5l1q71%8x#djos2gm&el68b9gp98-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -55,9 +55,6 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000"
 ]
-
-
-
 
 
 ROOT_URLCONF = 'api_insta.urls'
