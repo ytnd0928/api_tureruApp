@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '93sz7=ro#_8a(_(wk)e2z5l1q71%8x#djos2gm&el68b9gp98-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -145,8 +145,3 @@ AUTH_USER_MODEL = 'api.User'
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-try:
-    from .local_settings import *
-except ImportError:
-    pass
