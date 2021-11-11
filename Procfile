@@ -1,1 +1,1 @@
-web: gunicorn tureruapp.wsgi --log-file -
+web: gunicorn api_insta.wisgi --log-file -
