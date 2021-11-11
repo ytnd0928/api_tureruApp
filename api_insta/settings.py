@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 # Application definition
 
-INSTALLED_APPS = {
+INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +48,7 @@ INSTALLED_APPS = {
     'rest_framework',
     'api.apps.ApiConfig',
     'corsheaders',
-}
+)
 
 MIDDLEWARE = [
 
