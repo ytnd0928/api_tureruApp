@@ -172,14 +172,7 @@ MEDIA_URL = '/media/'
 from django.core.management.utils import get_random_secret_key
 SECRET_KEY = get_random_secret_key()
 
-if not DEBUG:
-    SECRET_KEY = os.environ['SECRET_KEY']
-    import django_heroku
 
-    django_heroku.settings(locals())
-
-# Activate Django-Heroku.
-django_heroku.settings(locals())
 
 try:
     from .local_settings import *
