@@ -11,8 +11,21 @@ import os
 from datetime import timedelta
 
 
+
 import django_heroku
 
+import dj_database_url
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'name',
+        'USER': 'user',
+        'PASSWORD': '',
+        'HOST': 'host',
+        'PORT': '',
+    }
+}
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +35,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '93sz7=ro#_8a(_(wk)e2z5l1q71%8x#djos2gm&el68b9gp98-'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -151,17 +164,24 @@ AUTH_USER_MODEL = 'api.User'
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 from django.core.management.utils import get_random_secret_key
 SECRET_KEY = get_random_secret_key()
 
+if not DEBUG:
+    SECRET_KEY = os.environ['SECRET_KEY']
+    import django_heroku
+
+    django_heroku.settings(locals())
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
 try:
     from .local_settings import *
-except:
+except　ImportError:
     pass
