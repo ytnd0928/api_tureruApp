@@ -1,1 +1,1 @@
-web: gunicorn api_insta.wisgi --log-file -
+web: gunicorn api_insta.wsgi --log-file -
