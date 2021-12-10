@@ -69,7 +69,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000"
+    "http:https://serene-babbage-3506af.netlify.app/"
 ]
 
 
