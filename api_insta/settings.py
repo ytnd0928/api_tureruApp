@@ -69,8 +69,10 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    Access-Control-Allow-Origin:"https://serene-babbage-3506af.netlify.app/"
+    'https://serene-babbage-3506af.netlify.app/',
 ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 
 ROOT_URLCONF = 'api_insta.urls'
